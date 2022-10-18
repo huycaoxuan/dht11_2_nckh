@@ -10,9 +10,9 @@ basic.forever(function () {
     dht11_dht22.readData(dataType.temperature),
     60
     )
-    if (true) {
-    	
+    if (dht11_dht22.readData(dataType.temperature) >= 40) {
+        pins.digitalWritePin(DigitalPin.P8, 1)
     } else {
-    	
+        pins.digitalWritePin(DigitalPin.P8, 0)
     }
 })
